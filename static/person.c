@@ -35,6 +35,21 @@ person* new_person(const char* name, int age)
 
     //Initialize the data
     new->data->name = (char*)malloc(strlen(name) * sizeof(char) + 1);
+    strcpy(new->data->name, name);
+    new->data->age = age;
+
+    //Set the functions pointers
+    new->print = print_person;
+    new->dispose = dispose_person;
+
+    return new;
+}
+
+// must call the objects with this function
+person* _(person* obj)
+{
+    __actual_person = obj;
+    return obj;
 }
 
 

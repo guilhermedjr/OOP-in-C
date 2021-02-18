@@ -9,7 +9,7 @@ typedef struct person
     person_private* data;
 
     // "class" functions
-    void (*dispose);
+    void (*dispose)();
     void(*print)();
 } person;
 
